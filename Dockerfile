@@ -13,4 +13,6 @@ RUN chown -R root:root $WORKDIR \
 
 EXPOSE 24224
 
+VOLUME [$WORKDIR/buffer, $WORKDIR/log]
+
 CMD exec fluentd -c /fluentd/etc/$FLUENTD_CONF -p /fluentd/plugins $FLUENTD_OPT
